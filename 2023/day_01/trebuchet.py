@@ -1,9 +1,31 @@
+#!/usr/bin/env python3
 # Advent of Code 2023 - Day 1: Trebuchet?!
 
-# TODO: import data from input file
+import os
 
-# TODO: parse to remove letters
+# Get cleaned data list from input file 
+input_file = open("input.txt")
+input_data = input_file.readlines()
+input_file.close()
+data = []
+for line in input_data:
+    data.append(line.strip())
+    
 
-# TODO: get first and last number and combine and add to list
+values = 0
+for line in data:
+    # Finds first number in string
+    for char in line:
+        if char.isdigit():
+            val1 = char
+            break 
+    # Finds last number in string
+    for char in line:
+        if char.isdigit():
+            val2 = char
+    # Combine first and last numbers and adds to total values
+    value = (val1 + val2)
+    values += int(value)
 
-# TODO: sum all numbers
+print("Part 1:", values)
+
